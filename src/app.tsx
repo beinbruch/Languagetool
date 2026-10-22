@@ -1,12 +1,14 @@
 import { useMemo, useState } from 'preact/hooks';
 import { UNIT_BY_ID } from './content';
+import { READINGS } from './content/readings';
 import { LEVEL_NAMES } from './content/types';
-import { buildLesson, exerciseForKey, type Exercise } from './engine/exercises';
-import { addXp, applyPlacement, completeUnit, dueKeys, reviewCard } from './engine/progress';
+import { buildLesson, exerciseForKey, readingQuiz, type Exercise } from './engine/exercises';
+import { addXp, applyPlacement, completeReading, completeUnit, dueKeys, recordMistakes, reviewCard } from './engine/progress';
 import { sample } from './engine/random';
 import { setProgress, useProgress } from './store';
 import { Home } from './ui/Home';
 import { Placement } from './ui/Placement';
+import { Reader } from './ui/Reader';
 import { Session, type SessionResult } from './ui/Session';
 import { Settings } from './ui/Settings';
 
@@ -14,9 +16,11 @@ type Screen =
   | { name: 'home' }
   | { name: 'tips'; unitId: string }
   | { name: 'lesson'; unitId: string; exercises: Exercise[] }
-  | { name: 'review'; exercises: Exercise[] }
+  | { name: 'review'; exercises: Exercise[]; mistakes?: boolean }
   | { name: 'placement' }
   | { name: 'settings' }
+  | { name: 'reader'; readingId: string }
+  | { name: 'quiz'; readingId: string; exercises: Exercise[] }
   | { name: 'result'; xp: number; correct: number; total: number; title: string };
 
 const REVIEW_SIZE = 15;
@@ -39,6 +43,11 @@ export function App() {
             const exercises = keys.map((k) => exerciseForKey(k)).filter((e): e is Exercise => e !== null);
             if (exercises.length) setScreen({ name: 'review', exercises });
           }}
+          onMistakes={() => {
+            const exercises = p.mistakes.slice(0, REVIEW_SIZE).map((k) => exerciseForKey(k)).filter((e): e is Exercise => e !== null);
+            if (exercises.length) setScreen({ name: 'review', exercises, mistakes: true });
+          }}
+          onReading={(readingId) => setScreen({ name: 'reader', readingId })}
           onPlacement={() => setScreen({ name: 'placement' })}
           onSkipPlacement={() => setProgress((q) => applyPlacement(q, null))}
           onSettings={() => setScreen({ name: 'settings' })}
@@ -89,7 +98,7 @@ export function App() {
           onFinish={(r: SessionResult) => {
             const xp = 10 + r.correct;
             const at = new Date();
-            setProgress((q) => addXp(completeUnit(q, screen.unitId, r.correct / r.total, at), xp, at));
+            setProgress((q) => addXp(recordMistakes(completeUnit(q, screen.unitId, r.correct / r.total, at), r.firstTry), xp, at));
             setScreen({ name: 'result', xp, correct: r.correct, total: r.total, title: UNIT_BY_ID[screen.unitId].title });
           }}
         />
@@ -108,9 +117,9 @@ export function App() {
             setProgress((q) => {
               let next = q;
               for (const [key, ok] of Object.entries(r.firstTry)) next = reviewCard(next, key, ok, at);
-              return addXp(next, xp, at);
+              return addXp(recordMistakes(next, r.firstTry), xp, at);
             });
-            setScreen({ name: 'result', xp, correct: r.correct, total: r.total, title: 'Wiederholung' });
+            setScreen({ name: 'result', xp, correct: r.correct, total: r.total, title: screen.mistakes ? 'Fehlerheft' : 'Wiederholung' });
           }}
         />
       );
@@ -126,6 +135,36 @@ export function App() {
           }}
         />
       );
+
+    case 'reader': {
+      const reading = READINGS.find((r) => r.id === screen.readingId)!;
+      return (
+        <Reader
+          reading={reading}
+          rate={p.settings.speechRate}
+          onBack={home}
+          onQuiz={() => setScreen({ name: 'quiz', readingId: reading.id, exercises: readingQuiz(reading) })}
+        />
+      );
+    }
+
+    case 'quiz': {
+      const reading = READINGS.find((r) => r.id === screen.readingId)!;
+      return (
+        <Session
+          exercises={screen.exercises}
+          rate={p.settings.speechRate}
+          sounds={p.settings.sounds}
+          onQuit={() => setScreen({ name: 'reader', readingId: reading.id })}
+          onFinish={(r: SessionResult) => {
+            const xp = 5 + 2 * r.correct;
+            const at = new Date();
+            setProgress((q) => addXp(completeReading(q, reading.id, r.correct / r.total), xp, at));
+            setScreen({ name: 'result', xp, correct: r.correct, total: r.total, title: reading.title });
+          }}
+        />
+      );
+    }
 
     case 'settings':
       return <Settings progress={p} onBack={home} onPlacement={() => setScreen({ name: 'placement' })} />;

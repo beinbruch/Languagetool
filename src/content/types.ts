@@ -45,3 +45,25 @@ export interface PlacementQuestion {
   answer: string;
   wrong: string[];
 }
+
+export interface ReadingLine {
+  /** Set for dialogues; lines with different speakers get different voices. */
+  speaker?: string;
+  fr: string;
+  de: string;
+}
+
+export interface ReadingQuestion {
+  /** Question in German, so it tests understanding rather than grammar. */
+  q: string;
+  answer: string;
+  wrong: string[];
+}
+
+export interface Reading {
+  id: string;
+  level: Level;
+  title: string;
+  lines: ReadingLine[];
+  questions: ReadingQuestion[];
+}

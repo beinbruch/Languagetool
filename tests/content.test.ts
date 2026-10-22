@@ -63,3 +63,26 @@ describe('placement test', () => {
     }
   });
 });
+
+describe('reading texts', () => {
+  it('has unique ids and at least two texts per level', async () => {
+    const { READINGS } = await import('../src/content/readings');
+    expect(new Set(READINGS.map((r) => r.id)).size).toBe(READINGS.length);
+    for (const level of LEVELS) expect(READINGS.filter((r) => r.level === level).length).toBeGreaterThanOrEqual(2);
+  });
+  it('has complete lines and unambiguous questions', async () => {
+    const { READINGS } = await import('../src/content/readings');
+    for (const r of READINGS) {
+      expect(r.lines.length, r.id).toBeGreaterThanOrEqual(5);
+      for (const l of r.lines) {
+        expect(l.fr.trim(), r.id).not.toBe('');
+        expect(l.de.trim(), r.id).not.toBe('');
+      }
+      expect(r.questions.length, r.id).toBeGreaterThanOrEqual(3);
+      for (const q of r.questions) {
+        expect(q.wrong, q.q).not.toContain(q.answer);
+        expect(new Set(q.wrong).size, q.q).toBe(q.wrong.length);
+      }
+    }
+  });
+});
