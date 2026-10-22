@@ -193,4 +193,132 @@ export const A2: Unit[] = [
       { fr: 'Je vais voyager ___ été.', answer: 'en', wrong: ['au', 'à'], de: 'Ich werde im Sommer reisen.' },
     ],
   },
+  {
+    id: 'a2-health',
+    level: 'A2',
+    title: 'Beim Arzt',
+    tips:
+      'Schmerzen: „J’ai mal à la tête / au ventre / aux dents“ (à + Artikel!). ' +
+      '„Il faut“ + Infinitiv drückt eine Notwendigkeit aus: „Il faut rester au lit.“',
+    vocab: [
+      ['le médecin', 'der Arzt|die Ärztin'],
+      ['avoir mal à', 'Schmerzen haben in|wehtun'],
+      ['la tête', 'der Kopf'],
+      ['le ventre', 'der Bauch'],
+      ['la fièvre', 'das Fieber'],
+      ['malade', 'krank'],
+      ['le médicament', 'das Medikament'],
+      ['la pharmacie', 'die Apotheke'],
+    ],
+    sentences: [
+      ["J'ai mal à la tête.", 'Ich habe Kopfschmerzen.|Mir tut der Kopf weh.'],
+      ['Elle a de la fièvre depuis hier.', 'Sie hat seit gestern Fieber.'],
+      ['Il faut prendre ce médicament trois fois par jour.', 'Man muss dieses Medikament dreimal täglich nehmen.|Sie müssen dieses Medikament dreimal am Tag nehmen.'],
+      ['Je suis malade, je reste au lit.', 'Ich bin krank, ich bleibe im Bett.'],
+      ['Où est la pharmacie la plus proche?', 'Wo ist die nächste Apotheke?'],
+      ['Tu as mal au ventre?', 'Hast du Bauchschmerzen?|Tut dir der Bauch weh?'],
+    ],
+    cloze: [
+      { fr: "J'ai mal ___ tête.", answer: 'à la', wrong: ['au', 'de la'], de: 'Ich habe Kopfschmerzen.' },
+      { fr: 'Tu as mal ___ ventre?', answer: 'au', wrong: ['à la', 'du'], de: 'Hast du Bauchschmerzen?' },
+      { fr: 'Il ___ prendre ce médicament.', answer: 'faut', wrong: ['doit', 'faire'], de: 'Man muss dieses Medikament nehmen.' },
+      { fr: 'Elle a ___ fièvre.', answer: 'de la', wrong: ['du', 'une'], de: 'Sie hat Fieber.' },
+    ],
+  },
+  {
+    id: 'a2-restaurant',
+    level: 'A2',
+    title: 'Im Restaurant',
+    tips:
+      'Bestellen: „Je voudrais …“ oder „Je vais prendre …“. Die Rechnung: „L’addition, s’il vous plaît.“ ' +
+      'Menü auf Französisch heißt „la carte“; „le menu“ ist ein festes Menü mit mehreren Gängen.',
+    vocab: [
+      ['la carte', 'die Speisekarte'],
+      ["l'addition", 'die Rechnung'],
+      ["l'entrée", 'die Vorspeise'],
+      ['le plat principal', 'das Hauptgericht'],
+      ['le dessert', 'der Nachtisch|das Dessert'],
+      ['le serveur', 'der Kellner'],
+      ['commander', 'bestellen'],
+      ['réserver', 'reservieren'],
+    ],
+    sentences: [
+      ["J'ai réservé une table pour deux.", 'Ich habe einen Tisch für zwei reserviert.'],
+      ['Je vais prendre le poisson.', 'Ich nehme den Fisch.|Ich werde den Fisch nehmen.'],
+      ["L'addition, s'il vous plaît.", 'Die Rechnung, bitte.'],
+      ['Vous avez choisi?', 'Haben Sie gewählt?|Habt ihr gewählt?'],
+      ['Comme dessert, je voudrais une tarte aux pommes.', 'Als Nachtisch hätte ich gern einen Apfelkuchen.|Zum Nachtisch möchte ich einen Apfelkuchen.'],
+      ['Le serveur apporte la carte.', 'Der Kellner bringt die Speisekarte.'],
+    ],
+    cloze: [
+      { fr: "L'___, s'il vous plaît.", answer: 'addition', wrong: ['carte', 'entrée'], de: 'Die Rechnung, bitte.' },
+      { fr: 'Je ___ prendre le poisson.', answer: 'vais', wrong: ['veux de', 'suis'], de: 'Ich nehme den Fisch.' },
+      { fr: 'Une tarte ___ pommes.', answer: 'aux', wrong: ['de les', 'à les'], de: 'Ein Apfelkuchen.' },
+      { fr: "J'ai ___ une table pour deux.", answer: 'réservé', wrong: ['réserver', 'réserve'], de: 'Ich habe einen Tisch für zwei reserviert.' },
+    ],
+  },
+  {
+    id: 'a2-transport',
+    level: 'A2',
+    title: 'Unterwegs',
+    tips:
+      'Verkehrsmittel: „en“ für geschlossene Fahrzeuge (en train, en bus, en voiture, en avion), „à“ für alles, worauf man sitzt (à vélo, à pied). ' +
+      'Ländernamen: „en France“ (weiblich), „au Canada“ (männlich), „aux États-Unis“ (Plural).',
+    vocab: [
+      ['le train', 'der Zug'],
+      ["l'avion", 'das Flugzeug'],
+      ['le vélo', 'das Fahrrad'],
+      ['à pied', 'zu Fuß'],
+      ['le billet', 'die Fahrkarte|das Ticket'],
+      ['le quai', 'der Bahnsteig'],
+      ['en retard', 'verspätet|zu spät'],
+      ["l'aller-retour", 'die Hin- und Rückfahrt'],
+    ],
+    sentences: [
+      ['Je vais au travail à vélo.', 'Ich fahre mit dem Fahrrad zur Arbeit.'],
+      ['Nous partons en Espagne en avion.', 'Wir fliegen nach Spanien.|Wir reisen mit dem Flugzeug nach Spanien.'],
+      ["Un aller-retour pour Lyon, s'il vous plaît.", 'Eine Hin- und Rückfahrt nach Lyon, bitte.'],
+      ['Le train part du quai numéro trois.', 'Der Zug fährt von Bahnsteig drei ab.|Der Zug fährt vom Bahnsteig Nummer drei ab.'],
+      ['Le bus est en retard.', 'Der Bus hat Verspätung.|Der Bus ist verspätet.'],
+      ['Elle habite au Canada.', 'Sie wohnt in Kanada.'],
+    ],
+    cloze: [
+      { fr: 'Je vais au travail ___ vélo.', answer: 'à', wrong: ['en', 'par'], de: 'Ich fahre mit dem Fahrrad zur Arbeit.' },
+      { fr: 'Nous partons ___ avion.', answer: 'en', wrong: ['à', 'par l'], de: 'Wir fliegen.' },
+      { fr: 'Elle habite ___ Canada.', answer: 'au', wrong: ['en', 'à'], de: 'Sie wohnt in Kanada.' },
+      { fr: 'Ils voyagent ___ France.', answer: 'en', wrong: ['au', 'à la'], de: 'Sie reisen in Frankreich.' },
+    ],
+  },
+  {
+    id: 'a2-object-pronouns',
+    level: 'A2',
+    title: 'Objektpronomen',
+    tips:
+      'Direktes Objekt: le, la, les („Je le vois“ = Ich sehe ihn). Indirektes Objekt (mit „à“): lui, leur („Je lui parle“ = Ich spreche mit ihm/ihr). ' +
+      'Die Pronomen stehen vor dem konjugierten Verb: „Je ne la connais pas.“',
+    vocab: [
+      ['le', 'ihn|es'],
+      ['la', 'sie (Sg.)|es'],
+      ['les', 'sie (Pl.)'],
+      ['lui', 'ihm|ihr'],
+      ['leur', 'ihnen'],
+      ['connaître', 'kennen'],
+      ['téléphoner à', 'anrufen'],
+      ['donner', 'geben'],
+    ],
+    sentences: [
+      ['Tu connais Marc? Oui, je le connais.', 'Kennst du Marc? Ja, ich kenne ihn.'],
+      ['Cette robe, je la trouve belle.', 'Dieses Kleid finde ich schön.'],
+      ['Je lui téléphone ce soir.', 'Ich rufe ihn heute Abend an.|Ich rufe sie heute Abend an.'],
+      ['Nous leur donnons des bonbons.', 'Wir geben ihnen Bonbons.'],
+      ['Je ne les vois pas.', 'Ich sehe sie nicht.'],
+      ["Elle m'invite à sa fête.", 'Sie lädt mich zu ihrer Party ein.|Sie lädt mich zu ihrem Fest ein.'],
+    ],
+    cloze: [
+      { fr: 'Marc? Oui, je ___ connais.', answer: 'le', wrong: ['lui', 'la'], de: 'Marc? Ja, ich kenne ihn.' },
+      { fr: 'Ma sœur? Je ___ téléphone ce soir.', answer: 'lui', wrong: ['la', 'leur'], de: 'Meine Schwester? Ich rufe sie heute Abend an.' },
+      { fr: 'Les enfants? Nous ___ donnons des bonbons.', answer: 'leur', wrong: ['les', 'lui'], de: 'Die Kinder? Wir geben ihnen Bonbons.' },
+      { fr: 'Mes clés? Je ne ___ vois pas.', answer: 'les', wrong: ['leur', 'le'], de: 'Meine Schlüssel? Ich sehe sie nicht.' },
+    ],
+  },
 ];

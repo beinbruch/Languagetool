@@ -81,6 +81,12 @@ describe('progress', () => {
     expect(dueKeys(p, later)).not.toContain(due[0]);
   });
 
+  it('skips units added to an already passed level when loading old saves', () => {
+    const old = { ...applyPlacement(emptyProgress(), 'A2'), skipped: ['a1-hello'] };
+    const loaded = migrate(JSON.parse(JSON.stringify(old)));
+    expect(nextUnitId(loaded)).toBe(UNITS.find((u) => u.level === 'B1')!.id);
+  });
+
   it('survives a JSON round-trip and fills missing fields', () => {
     const p = completeUnit(emptyProgress(), UNITS[0].id, 0.8, day(1));
     const back = migrate(JSON.parse(JSON.stringify(p)));

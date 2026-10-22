@@ -193,4 +193,132 @@ export const A1: Unit[] = [
       { fr: 'Ils ___ à la maison.', answer: 'travaillent', wrong: ['travaille', 'travaillons'], de: 'Sie arbeiten zu Hause.' },
     ],
   },
+  {
+    id: 'a1-time',
+    level: 'A1',
+    title: 'Uhrzeit & Wochentage',
+    tips:
+      'Die Uhrzeit sagt man mit „il est“: „Il est trois heures.“ Halbe Stunden: „et demie“, Viertel: „et quart“ / „moins le quart“. ' +
+      'Wochentage schreibt man klein und ohne Artikel für „am“: „lundi“ = am Montag, „le lundi“ = montags.',
+    vocab: [
+      ['lundi', 'Montag'],
+      ['mardi', 'Dienstag'],
+      ['mercredi', 'Mittwoch'],
+      ['jeudi', 'Donnerstag'],
+      ['vendredi', 'Freitag'],
+      ['le samedi', 'samstags|der Samstag'],
+      ["l'heure", 'die Uhrzeit|die Stunde'],
+      ['midi', 'Mittag|zwölf Uhr mittags'],
+    ],
+    sentences: [
+      ['Quelle heure est-il?|Il est quelle heure?', 'Wie spät ist es?'],
+      ['Il est huit heures et demie.', 'Es ist halb neun.|Es ist acht Uhr dreißig.'],
+      ['Le cours commence à neuf heures.', 'Der Kurs beginnt um neun Uhr.'],
+      ['Lundi, je travaille à la maison.', 'Am Montag arbeite ich zu Hause.'],
+      ['Le samedi, nous allons au marché.', 'Samstags gehen wir auf den Markt.'],
+      ['On mange à midi.', 'Wir essen um zwölf Uhr.|Wir essen mittags.'],
+    ],
+    cloze: [
+      { fr: 'Il ___ huit heures.', answer: 'est', wrong: ['a', 'sont'], de: 'Es ist acht Uhr.' },
+      { fr: 'Il est huit heures et ___.', answer: 'demie', wrong: ['moitié', 'demi-heure'], de: 'Es ist halb neun.' },
+      { fr: 'Le cours commence ___ neuf heures.', answer: 'à', wrong: ['en', 'dans'], de: 'Der Kurs beginnt um neun Uhr.' },
+      { fr: '___ samedi, nous allons au marché.', answer: 'Le', wrong: ['Au', 'En'], de: 'Samstags gehen wir auf den Markt.' },
+    ],
+  },
+  {
+    id: 'a1-weather',
+    level: 'A1',
+    title: 'Wetter & Jahreszeiten',
+    tips:
+      'Beim Wetter benutzt man oft „il fait“: il fait beau, il fait chaud, il fait froid. Aber: „il pleut“ (es regnet), „il neige“ (es schneit). ' +
+      'Jahreszeiten: en été, en automne, en hiver – aber „au printemps“.',
+    vocab: [
+      ['beau', 'schön'],
+      ['chaud', 'warm|heiß'],
+      ['froid', 'kalt'],
+      ['il pleut', 'es regnet'],
+      ['il neige', 'es schneit'],
+      ['le soleil', 'die Sonne'],
+      ["l'hiver", 'der Winter'],
+      ['le printemps', 'der Frühling'],
+    ],
+    sentences: [
+      ["Il fait beau aujourd'hui.", 'Heute ist schönes Wetter.|Das Wetter ist heute schön.'],
+      ['En hiver, il fait froid.', 'Im Winter ist es kalt.'],
+      ['Il pleut depuis ce matin.', 'Es regnet seit heute Morgen.'],
+      ['Au printemps, les arbres sont verts.', 'Im Frühling sind die Bäume grün.'],
+      ["J'ai chaud, j'ouvre la fenêtre.", 'Mir ist warm, ich öffne das Fenster.'],
+      ['Il neige à la montagne.', 'In den Bergen schneit es.|Es schneit in den Bergen.'],
+    ],
+    cloze: [
+      { fr: 'Il ___ beau aujourd’hui.', answer: 'fait', wrong: ['est', 'a'], de: 'Heute ist schönes Wetter.' },
+      { fr: '___ printemps, les arbres sont verts.', answer: 'Au', wrong: ['En', 'Le'], de: 'Im Frühling sind die Bäume grün.' },
+      { fr: '___ hiver, il fait froid.', answer: 'En', wrong: ['Au', 'À'], de: 'Im Winter ist es kalt.' },
+      { fr: "J'___ chaud.", answer: 'ai', wrong: ['suis', 'fais'], de: 'Mir ist warm.' },
+    ],
+  },
+  {
+    id: 'a1-home',
+    level: 'A1',
+    title: 'Wohnung & il y a',
+    tips:
+      '„Il y a“ heißt „es gibt“ oder „da ist/sind“: „Il y a deux chambres.“ Verneint: „Il n’y a pas de jardin.“ ' +
+      'Ortsangaben: dans (in), sur (auf), sous (unter), à côté de (neben).',
+    vocab: [
+      ["l'appartement", 'die Wohnung'],
+      ['la chambre', 'das Schlafzimmer|das Zimmer'],
+      ['la cuisine', 'die Küche'],
+      ['la salle de bains', 'das Badezimmer'],
+      ['la table', 'der Tisch'],
+      ['le lit', 'das Bett'],
+      ['sur', 'auf'],
+      ['sous', 'unter'],
+    ],
+    sentences: [
+      ["Il y a deux chambres dans l'appartement.", 'Es gibt zwei Schlafzimmer in der Wohnung.|In der Wohnung gibt es zwei Zimmer.'],
+      ["Il n'y a pas de jardin.", 'Es gibt keinen Garten.'],
+      ['Le chat dort sous le lit.', 'Die Katze schläft unter dem Bett.|Der Kater schläft unter dem Bett.'],
+      ['Les clés sont sur la table.', 'Die Schlüssel liegen auf dem Tisch.|Die Schlüssel sind auf dem Tisch.'],
+      ['La cuisine est petite mais jolie.', 'Die Küche ist klein, aber hübsch.'],
+      ["La salle de bains est à côté de la chambre.", 'Das Badezimmer ist neben dem Schlafzimmer.'],
+    ],
+    cloze: [
+      { fr: "Il ___ a deux chambres.", answer: 'y', wrong: ['en', 'le'], de: 'Es gibt zwei Schlafzimmer.' },
+      { fr: "Il n'y a pas ___ jardin.", answer: 'de', wrong: ['du', 'un'], de: 'Es gibt keinen Garten.' },
+      { fr: 'Le chat dort ___ le lit.', answer: 'sous', wrong: ['sur', 'dans'], de: 'Die Katze schläft unter dem Bett.' },
+      { fr: 'La salle de bains est à côté ___ la chambre.', answer: 'de', wrong: ['à', 'en'], de: 'Das Badezimmer ist neben dem Schlafzimmer.' },
+    ],
+  },
+  {
+    id: 'a1-questions',
+    level: 'A1',
+    title: 'Fragen stellen',
+    tips:
+      'Drei Arten zu fragen: Intonation („Tu viens ?“), „est-ce que“ („Est-ce que tu viens ?“) und Inversion („Viens-tu ?“). ' +
+      'Fragewörter: où (wo), quand (wann), comment (wie), pourquoi (warum), qui (wer), combien (wie viel).',
+    vocab: [
+      ['où', 'wo|wohin'],
+      ['quand', 'wann'],
+      ['comment', 'wie'],
+      ['pourquoi', 'warum'],
+      ['qui', 'wer'],
+      ['combien', 'wie viel|wie viele'],
+      ["qu'est-ce que", 'was'],
+      ['parce que', 'weil'],
+    ],
+    sentences: [
+      ['Où habites-tu?|Où est-ce que tu habites?|Tu habites où?', 'Wo wohnst du?'],
+      ['Quand est-ce que tu arrives?|Quand arrives-tu?', 'Wann kommst du an?'],
+      ["Qu'est-ce que tu fais?", 'Was machst du?'],
+      ["Pourquoi tu ris? Parce que c'est drôle.", 'Warum lachst du? Weil es lustig ist.'],
+      ['Qui est cette femme?', 'Wer ist diese Frau?'],
+      ['Combien de frères as-tu?|Tu as combien de frères?', 'Wie viele Brüder hast du?'],
+    ],
+    cloze: [
+      { fr: '___ habites-tu? À Lyon.', answer: 'Où', wrong: ['Quand', 'Qui'], de: 'Wo wohnst du? In Lyon.' },
+      { fr: '___ est-ce que tu arrives? Demain.', answer: 'Quand', wrong: ['Où', 'Combien'], de: 'Wann kommst du an? Morgen.' },
+      { fr: "Qu'___-ce que tu fais?", answer: 'est', wrong: ['es', 'et'], de: 'Was machst du?' },
+      { fr: 'Pourquoi? ___ que c’est drôle.', answer: 'Parce', wrong: ['Pour', 'Car'], de: 'Warum? Weil es lustig ist.' },
+    ],
+  },
 ];
