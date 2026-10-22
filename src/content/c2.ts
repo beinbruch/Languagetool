@@ -163,4 +163,100 @@ export const C2: Unit[] = [
       { fr: 'Après la pluie, le beau ___.', answer: 'temps', wrong: ['soleil', 'jour'], de: 'Auf Regen folgt Sonnenschein.' },
     ],
   },
+  {
+    id: 'c2-paronyms',
+    level: 'C2',
+    title: 'Paronyme',
+    tips:
+      'Paronyme klingen fast gleich, bedeuten aber Verschiedenes: „infecter“ (infizieren) vs. „infester“ (heimsuchen, befallen), ' +
+      '„conjecture“ (Vermutung) vs. „conjoncture“ (Wirtschaftslage), „prodige“ (Wunderkind) vs. „prodigue“ (verschwenderisch).',
+    vocab: [
+      ['la conjoncture', 'die Konjunktur|die Wirtschaftslage'],
+      ['la conjecture', 'die Vermutung|die Mutmaßung'],
+      ['infester', 'befallen|heimsuchen'],
+      ['infecter', 'infizieren'],
+      ['prodigue', 'verschwenderisch'],
+      ['un prodige', 'ein Wunderkind'],
+      ['effraction', 'Einbruch (gewaltsames Eindringen)|der Einbruch'],
+      ['infraction', 'der Verstoß|die Ordnungswidrigkeit'],
+    ],
+    sentences: [
+      ['La conjoncture économique reste incertaine.', 'Die Wirtschaftslage bleibt unsicher.|Die Konjunktur bleibt unsicher.'],
+      ["Ce ne sont que des conjectures.", 'Das sind nur Vermutungen.|Das sind bloße Mutmaßungen.'],
+      ['La région était infestée de moustiques.', 'Die Region war von Mücken heimgesucht.|Die Gegend wimmelte von Mücken.'],
+      ["La plaie s'est infectée.", 'Die Wunde hat sich entzündet.|Die Wunde hat sich infiziert.'],
+      ["Les voleurs sont entrés par effraction.", 'Die Diebe sind eingebrochen.|Die Diebe sind gewaltsam eingedrungen.'],
+      ['Ce jeune pianiste est un véritable prodige.', 'Dieser junge Pianist ist ein echtes Wunderkind.'],
+    ],
+    cloze: [
+      { fr: 'La ___ économique reste incertaine.', answer: 'conjoncture', wrong: ['conjecture', 'jointure'], de: 'Die Wirtschaftslage bleibt unsicher.' },
+      { fr: 'La région était ___ de moustiques.', answer: 'infestée', wrong: ['infectée', 'infusée'], de: 'Die Region war von Mücken heimgesucht.' },
+      { fr: 'Les voleurs sont entrés par ___.', answer: 'effraction', wrong: ['infraction', 'fraction'], de: 'Die Diebe sind eingebrochen.' },
+      { fr: 'Le fils ___ est revenu chez son père.', answer: 'prodigue', wrong: ['prodige', 'prodigieux'], de: 'Der verlorene Sohn ist zu seinem Vater zurückgekehrt.' },
+    ],
+  },
+  {
+    id: 'c2-legal',
+    level: 'C2',
+    title: 'Behörden- & Rechtssprache',
+    tips:
+      'Verwaltungsfranzösisch liebt Formeln: „le cas échéant“ (gegebenenfalls), „à compter de“ (ab), „sous réserve de“ (vorbehaltlich), ' +
+      '„nonobstant“ (ungeachtet). Verträge nutzen das Präsens mit Verpflichtungscharakter: „Le locataire s’engage à …“',
+    vocab: [
+      ['le cas échéant', 'gegebenenfalls'],
+      ['à compter de', 'ab|mit Wirkung vom'],
+      ['sous réserve de', 'vorbehaltlich'],
+      ['nonobstant', 'ungeachtet|trotz'],
+      ['le locataire', 'der Mieter'],
+      ['le bail', 'der Mietvertrag'],
+      ["s'engager à", 'sich verpflichten zu'],
+      ['le préavis', 'die Kündigungsfrist'],
+    ],
+    sentences: [
+      ["Le locataire s'engage à payer le loyer avant le cinq du mois.", 'Der Mieter verpflichtet sich, die Miete vor dem Fünften des Monats zu zahlen.'],
+      ['Le bail prend effet à compter du premier janvier.', 'Der Mietvertrag gilt ab dem ersten Januar.|Der Mietvertrag tritt am ersten Januar in Kraft.'],
+      ['Le préavis est de trois mois.', 'Die Kündigungsfrist beträgt drei Monate.'],
+      ['Joignez, le cas échéant, une copie du jugement.', 'Fügen Sie gegebenenfalls eine Kopie des Urteils bei.'],
+      ["L'inscription est acceptée sous réserve de paiement.", 'Die Anmeldung wird vorbehaltlich der Zahlung angenommen.'],
+      ['Nonobstant ces difficultés, le contrat a été signé.', 'Ungeachtet dieser Schwierigkeiten wurde der Vertrag unterzeichnet.'],
+    ],
+    cloze: [
+      { fr: 'Le bail prend effet à ___ du premier janvier.', answer: 'compter', wrong: ['partir', 'dater'], de: 'Der Mietvertrag gilt ab dem ersten Januar.' },
+      { fr: 'Joignez, le cas ___, une copie du jugement.', answer: 'échéant', wrong: ['échéance', 'échu'], de: 'Fügen Sie gegebenenfalls eine Kopie des Urteils bei.' },
+      { fr: 'Le locataire s’engage ___ payer le loyer.', answer: 'à', wrong: ['de', 'pour'], de: 'Der Mieter verpflichtet sich, die Miete zu zahlen.' },
+      { fr: 'Accepté sous ___ de paiement.', answer: 'réserve', wrong: ['condition', 'garantie'], de: 'Vorbehaltlich der Zahlung angenommen.' },
+    ],
+  },
+  {
+    id: 'c2-wordplay',
+    level: 'C2',
+    title: 'Mehrdeutigkeit & Wortspiel',
+    tips:
+      'Französisch hat viele Homophone: „verre, vert, ver, vers“ klingen gleich. Darauf beruhen Wortspiele in Werbung und Schlagzeilen. ' +
+      'Auch Bedeutungen wechseln mit dem Kontext: „la critique“ (die Kritik/der Kritiker), „un avocat“ (Anwalt/Avocado).',
+    vocab: [
+      ['un avocat', 'ein Anwalt|eine Avocado'],
+      ['le verre', 'das Glas'],
+      ['le ver', 'der Wurm'],
+      ['vers', 'gegen|in Richtung'],
+      ['la mousse', 'der Schaum|das Moos'],
+      ['le livre', 'das Buch'],
+      ['la livre', 'das Pfund'],
+      ['le mousse', 'der Schiffsjunge'],
+    ],
+    sentences: [
+      ["Mon avocat m'a conseillé de ne rien dire.", 'Mein Anwalt hat mir geraten, nichts zu sagen.'],
+      ["J'ai mis un avocat dans la salade.", 'Ich habe eine Avocado in den Salat getan.'],
+      ['Un ver de terre se cache sous le verre vert.', 'Ein Regenwurm versteckt sich unter dem grünen Glas.'],
+      ['Elle a acheté une livre de cerises.', 'Sie hat ein Pfund Kirschen gekauft.'],
+      ['Le jeune mousse aimait la mousse au chocolat.', 'Der junge Schiffsjunge mochte Mousse au Chocolat.|Der junge Schiffsjunge liebte Schokoladenmousse.'],
+      ['Nous rentrerons vers minuit.', 'Wir kommen gegen Mitternacht zurück.|Wir kehren gegen Mitternacht heim.'],
+    ],
+    cloze: [
+      { fr: 'Elle a acheté une ___ de cerises.', answer: 'livre', wrong: ['litre', 'libre'], de: 'Sie hat ein Pfund Kirschen gekauft.' },
+      { fr: 'Un ___ de terre se cache sous le verre.', answer: 'ver', wrong: ['vers', 'vert'], de: 'Ein Regenwurm versteckt sich unter dem Glas.' },
+      { fr: 'Nous rentrerons ___ minuit.', answer: 'vers', wrong: ['vert', 'verre'], de: 'Wir kommen gegen Mitternacht zurück.' },
+      { fr: 'Le jeune ___ travaillait sur le bateau.', answer: 'mousse', wrong: ['mouche', 'mousson'], de: 'Der junge Schiffsjunge arbeitete auf dem Schiff.' },
+    ],
+  },
 ];

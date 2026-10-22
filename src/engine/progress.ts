@@ -43,14 +43,22 @@ export function migrate(raw: unknown): Progress {
   const base = emptyProgress();
   if (!raw || typeof raw !== 'object') return base;
   const p = raw as Partial<Progress>;
+  const placement = { ...base.placement, ...p.placement };
   return {
     ...base,
     ...p,
-    placement: { ...base.placement, ...p.placement },
+    placement,
+    // Units added to a level after the placement test count as skipped too.
+    skipped: [...new Set([...(p.skipped ?? []), ...skippedBy(placement.passed)])],
     streak: { ...base.streak, ...p.streak },
     settings: { ...base.settings, ...p.settings },
     version: 1,
   };
+}
+
+function skippedBy(passed: Level | null): string[] {
+  const upTo = passed === null ? -1 : LEVELS.indexOf(passed);
+  return UNITS.filter((u) => LEVELS.indexOf(u.level) <= upTo).map((u) => u.id);
 }
 
 export function dayKey(d: Date): string {
@@ -106,12 +114,7 @@ export function nextUnitId(p: Progress): string | null {
 }
 
 export function applyPlacement(p: Progress, passed: Level | null): Progress {
-  const upTo = passed === null ? -1 : LEVELS.indexOf(passed);
-  return {
-    ...p,
-    placement: { done: true, passed },
-    skipped: UNITS.filter((u) => LEVELS.indexOf(u.level) <= upTo).map((u) => u.id),
-  };
+  return { ...p, placement: { done: true, passed }, skipped: skippedBy(passed) };
 }
 
 // Short-term steps would make cards due minutes after a lesson; lessons already repeat mistakes.

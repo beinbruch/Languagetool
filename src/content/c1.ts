@@ -163,4 +163,100 @@ export const C1: Unit[] = [
       { fr: 'Elle ___ sa valise et partit.', answer: 'prit', wrong: ['prenit', 'prisa'], de: 'Sie nahm ihren Koffer und ging.' },
     ],
   },
+  {
+    id: 'c1-formal-letters',
+    level: 'C1',
+    title: 'Formelle Briefe & E-Mails',
+    tips:
+      'Französische Geschäftsbriefe sind deutlich förmlicher als deutsche. Anrede: „Madame, Monsieur,“. ' +
+      'Schlussformeln sind lang: „Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.“ In E-Mails reicht „Bien cordialement“.',
+    vocab: [
+      ['ci-joint', 'anbei|beigefügt'],
+      ['suite à', 'im Anschluss an|bezugnehmend auf'],
+      ['je me permets de', 'ich erlaube mir'],
+      ["dans l'attente de", 'in Erwartung|in Erwartung Ihrer'],
+      ['la candidature', 'die Bewerbung'],
+      ['veuillez', 'bitte (förmlich)|wollen Sie bitte'],
+      ['bien cordialement', 'mit freundlichen Grüßen|herzliche Grüße'],
+      ['la réclamation', 'die Reklamation|die Beschwerde'],
+    ],
+    sentences: [
+      ['Veuillez trouver ci-joint mon curriculum vitae.', 'Anbei finden Sie meinen Lebenslauf.|Anbei erhalten Sie meinen Lebenslauf.'],
+      ['Suite à notre entretien téléphonique, je vous confirme ma participation.', 'Im Anschluss an unser Telefonat bestätige ich Ihnen meine Teilnahme.|Bezugnehmend auf unser Telefongespräch bestätige ich meine Teilnahme.'],
+      ['Je me permets de vous contacter au sujet de votre annonce.', 'Ich erlaube mir, Sie wegen Ihrer Anzeige zu kontaktieren.'],
+      ["Dans l'attente de votre réponse, je vous prie d'agréer mes salutations distinguées.", 'In Erwartung Ihrer Antwort verbleibe ich mit freundlichen Grüßen.'],
+      ["Je souhaiterais déposer une réclamation concernant ma commande.", 'Ich möchte eine Beschwerde bezüglich meiner Bestellung einreichen.|Ich möchte meine Bestellung reklamieren.'],
+      ['Je reste à votre disposition pour tout renseignement complémentaire.', 'Für weitere Auskünfte stehe ich Ihnen gern zur Verfügung.'],
+    ],
+    cloze: [
+      { fr: 'Veuillez trouver ___ mon curriculum vitae.', answer: 'ci-joint', wrong: ['ici joint', 'ci-dessous'], de: 'Anbei finden Sie meinen Lebenslauf.' },
+      { fr: '___ à notre entretien, je vous confirme ma participation.', answer: 'Suite', wrong: ['Après', 'Selon'], de: 'Im Anschluss an unser Gespräch bestätige ich meine Teilnahme.' },
+      { fr: 'Je reste à votre ___ pour tout renseignement.', answer: 'disposition', wrong: ['service', 'attente'], de: 'Für Auskünfte stehe ich Ihnen zur Verfügung.' },
+      { fr: "Je vous prie d'___ mes salutations distinguées.", answer: 'agréer', wrong: ['accepter', 'agréez'], de: 'Mit freundlichen Grüßen.' },
+    ],
+  },
+  {
+    id: 'c1-written-connectors',
+    level: 'C1',
+    title: 'Schriftlich argumentieren',
+    tips:
+      'Ein guter Aufsatz („dissertation“) gliedert sich klar: „Tout d’abord … Ensuite … Enfin …“. ' +
+      'Gehobene Konnektoren: „en outre“ (außerdem), „toutefois“ (jedoch), „ainsi“ (so/somit), „dès lors“ (folglich), „en somme“ (alles in allem).',
+    vocab: [
+      ['en outre', 'außerdem|darüber hinaus'],
+      ['toutefois', 'jedoch|allerdings'],
+      ['ainsi', 'so|somit'],
+      ['dès lors', 'folglich|von da an'],
+      ['en somme', 'alles in allem|kurzum'],
+      ["d'une part", 'einerseits|zum einen'],
+      ["d'autre part", 'andererseits|zum anderen'],
+      ['il convient de', 'es empfiehlt sich|man sollte'],
+    ],
+    sentences: [
+      ["Tout d'abord, il convient de définir les termes du sujet.", 'Zunächst empfiehlt es sich, die Begriffe des Themas zu definieren.|Zuerst sollte man die Begriffe des Themas definieren.'],
+      ["Ce projet est coûteux; il est, en outre, difficile à réaliser.", 'Dieses Projekt ist teuer; es ist außerdem schwer umzusetzen.'],
+      ["L'idée est séduisante; toutefois, elle soulève plusieurs questions.", 'Die Idee ist verlockend; allerdings wirft sie mehrere Fragen auf.|Die Idee ist reizvoll, jedoch wirft sie einige Fragen auf.'],
+      ["D'une part, la ville attire les touristes; d'autre part, elle souffre de la pollution.", 'Einerseits zieht die Stadt Touristen an; andererseits leidet sie unter der Verschmutzung.'],
+      ['Dès lors, une réforme semble inévitable.', 'Folglich scheint eine Reform unvermeidlich.'],
+      ["En somme, les avantages l'emportent sur les inconvénients.", 'Alles in allem überwiegen die Vorteile die Nachteile.|Kurzum, die Vorteile überwiegen.'],
+    ],
+    cloze: [
+      { fr: "L'idée est séduisante; ___, elle soulève des questions.", answer: 'toutefois', wrong: ['en outre', 'ainsi'], de: 'Die Idee ist verlockend; allerdings wirft sie Fragen auf.' },
+      { fr: "Il ___ de définir les termes du sujet.", answer: 'convient', wrong: ['faut', 'doit'], de: 'Es empfiehlt sich, die Begriffe des Themas zu definieren.' },
+      { fr: 'Les avantages l’___ sur les inconvénients.', answer: 'emportent', wrong: ['apportent', 'importent'], de: 'Die Vorteile überwiegen die Nachteile.' },
+      { fr: "D'une part … d'___ part …", answer: 'autre', wrong: ['une autre', "l'autre"], de: 'Einerseits … andererseits …' },
+    ],
+  },
+  {
+    id: 'c1-culture',
+    level: 'C1',
+    title: 'Kunst & Kultur',
+    tips:
+      'Über Kunst spricht man gern mit Nuancen: „Ce film m’a laissé de marbre“ (hat mich kalt gelassen), „Il m’a bouleversé“ (hat mich tief bewegt). ' +
+      'Kritik: „un chef-d’œuvre“ (Meisterwerk), „un navet“ (ein schlechter Film, wörtlich „eine Rübe“).',
+    vocab: [
+      ["un chef-d'œuvre", 'ein Meisterwerk'],
+      ['un navet', 'ein schlechter Film|ein Flop'],
+      ['bouleverser', 'tief bewegen|erschüttern'],
+      ['laisser de marbre', 'kalt lassen'],
+      ["l'œuvre", 'das Werk'],
+      ['la mise en scène', 'die Inszenierung|die Regie'],
+      ["l'exposition", 'die Ausstellung'],
+      ['le roman', 'der Roman'],
+    ],
+    sentences: [
+      ["Ce roman m'a profondément bouleversé.|Ce roman m'a profondément bouleversée.", 'Dieser Roman hat mich tief bewegt.|Dieser Roman hat mich zutiefst erschüttert.'],
+      ["Franchement, ce film est un navet.", 'Ehrlich gesagt ist dieser Film ein Flop.|Ehrlich gesagt ist dieser Film richtig schlecht.'],
+      ["La mise en scène était audacieuse.", 'Die Inszenierung war gewagt.|Die Regie war mutig.'],
+      ["L'exposition rassemble des œuvres rarement montrées.", 'Die Ausstellung vereint selten gezeigte Werke.'],
+      ["Ses tableaux m'ont laissé de marbre.|Ses tableaux m'ont laissée de marbre.", 'Seine Bilder haben mich kalt gelassen.|Ihre Bilder haben mich kalt gelassen.'],
+      ["C'est sans doute un chef-d'œuvre du cinéma muet.", 'Das ist zweifellos ein Meisterwerk des Stummfilms.'],
+    ],
+    cloze: [
+      { fr: 'Ses tableaux m’ont laissé de ___.', answer: 'marbre', wrong: ['pierre', 'glace'], de: 'Seine Bilder haben mich kalt gelassen.' },
+      { fr: 'Ce film est un ___.', answer: 'navet', wrong: ['chou', 'radis'], de: 'Dieser Film ist ein Flop.' },
+      { fr: 'La ___ en scène était audacieuse.', answer: 'mise', wrong: ['mis', 'prise'], de: 'Die Inszenierung war gewagt.' },
+      { fr: 'Ce roman m’a profondément ___.', answer: 'bouleversé', wrong: ['bouleverser', 'renversé'], de: 'Dieser Roman hat mich tief bewegt.' },
+    ],
+  },
 ];

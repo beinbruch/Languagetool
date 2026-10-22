@@ -195,4 +195,132 @@ export const B1: Unit[] = [
       { fr: "C'est cher; ___, c'est de bonne qualité.", answer: 'cependant', wrong: ['donc', 'parce que'], de: 'Es ist teuer; allerdings ist es von guter Qualität.' },
     ],
   },
+  {
+    id: 'b1-work',
+    level: 'B1',
+    title: 'Arbeit & Bewerbung',
+    tips:
+      'Im Berufsleben siezt man zunächst. Nützlich: „postuler à un poste“ (sich auf eine Stelle bewerben), „un entretien d’embauche“ (Vorstellungsgespräch). ' +
+      '„Depuis“ + Präsens drückt aus, dass etwas noch andauert: „Je travaille ici depuis trois ans.“',
+    vocab: [
+      ['le poste', 'die Stelle|der Posten'],
+      ['postuler', 'sich bewerben'],
+      ["l'entretien d'embauche", 'das Vorstellungsgespräch'],
+      ['le salaire', 'das Gehalt|der Lohn'],
+      ['le collègue', 'der Kollege'],
+      ["l'entreprise", 'das Unternehmen|die Firma'],
+      ['embaucher', 'einstellen'],
+      ['démissionner', 'kündigen'],
+    ],
+    sentences: [
+      ["J'ai postulé à un poste de comptable.", 'Ich habe mich auf eine Stelle als Buchhalter beworben.|Ich habe mich auf eine Buchhalterstelle beworben.'],
+      ['Je travaille dans cette entreprise depuis trois ans.', 'Ich arbeite seit drei Jahren in diesem Unternehmen.|Ich arbeite seit drei Jahren in dieser Firma.'],
+      ["Mon entretien d'embauche est lundi prochain.", 'Mein Vorstellungsgespräch ist nächsten Montag.'],
+      ['Ils ont embauché deux nouveaux collègues.', 'Sie haben zwei neue Kollegen eingestellt.'],
+      ['Elle a démissionné pour créer sa propre entreprise.', 'Sie hat gekündigt, um ihre eigene Firma zu gründen.|Sie hat gekündigt, um ihr eigenes Unternehmen zu gründen.'],
+      ['Quelles sont vos qualités principales?', 'Was sind Ihre wichtigsten Stärken?|Was sind Ihre Hauptqualitäten?'],
+    ],
+    cloze: [
+      { fr: 'Je travaille ici ___ trois ans.', answer: 'depuis', wrong: ['pendant', 'il y a'], de: 'Ich arbeite seit drei Jahren hier.' },
+      { fr: "J'ai postulé ___ un poste de comptable.", answer: 'à', wrong: ['pour', 'sur'], de: 'Ich habe mich auf eine Stelle als Buchhalter beworben.' },
+      { fr: 'Elle a démissionné ___ créer son entreprise.', answer: 'pour', wrong: ['à', 'de'], de: 'Sie hat gekündigt, um ihre Firma zu gründen.' },
+      { fr: 'Ils ont ___ deux nouveaux collègues.', answer: 'embauché', wrong: ['embaucher', 'embauchent'], de: 'Sie haben zwei neue Kollegen eingestellt.' },
+    ],
+  },
+  {
+    id: 'b1-feelings',
+    level: 'B1',
+    title: 'Gefühle',
+    tips:
+      'Gefühle mit „être“ + Adjektiv: „Je suis déçu“. Mit „avoir“: „avoir peur“, „avoir honte“, „avoir envie de“. ' +
+      'Reflexive Verben: „s’inquiéter“ (sich Sorgen machen), „s’énerver“ (sich aufregen), „se sentir“ (sich fühlen).',
+    vocab: [
+      ['déçu', 'enttäuscht'],
+      ['fier', 'stolz'],
+      ['avoir peur', 'Angst haben'],
+      ['avoir honte', 'sich schämen'],
+      ["s'inquiéter", 'sich Sorgen machen'],
+      ["s'énerver", 'sich aufregen|wütend werden'],
+      ['se sentir', 'sich fühlen'],
+      ['avoir envie de', 'Lust haben auf|Lust haben zu'],
+    ],
+    sentences: [
+      ['Je suis très fier de toi.|Je suis très fière de toi.', 'Ich bin sehr stolz auf dich.'],
+      ["Ne t'inquiète pas, tout va bien.", 'Mach dir keine Sorgen, alles ist gut.'],
+      ['Elle a peur des chiens.', 'Sie hat Angst vor Hunden.'],
+      ["Il s'énerve pour un rien.", 'Er regt sich wegen jeder Kleinigkeit auf.|Er regt sich über nichts auf.'],
+      ["Je me sens seul depuis qu'il est parti.|Je me sens seule depuis qu'il est parti.", 'Ich fühle mich einsam, seit er weg ist.|Ich fühle mich allein, seit er gegangen ist.'],
+      ["J'ai envie d'aller à la mer.", 'Ich habe Lust, ans Meer zu fahren.'],
+    ],
+    cloze: [
+      { fr: 'Je suis très fier ___ toi.', answer: 'de', wrong: ['sur', 'pour'], de: 'Ich bin sehr stolz auf dich.' },
+      { fr: 'Elle a peur ___ chiens.', answer: 'des', wrong: ['de les', 'aux'], de: 'Sie hat Angst vor Hunden.' },
+      { fr: 'Ne t’___ pas, tout va bien.', answer: 'inquiète', wrong: ['inquiètes', 'inquiéter'], de: 'Mach dir keine Sorgen, alles ist gut.' },
+      { fr: "J'ai ___ d'aller à la mer.", answer: 'envie', wrong: ['besoin', 'désir'], de: 'Ich habe Lust, ans Meer zu fahren.' },
+    ],
+  },
+  {
+    id: 'b1-media',
+    level: 'B1',
+    title: 'Medien & Internet',
+    tips:
+      'Viele Internetwörter sind englisch, aber offiziell gibt es französische Formen: „le courriel“ (E-Mail), „télécharger“ (herunterladen). ' +
+      'Im Alltag sagt man trotzdem oft „un mail“.',
+    vocab: [
+      ['les actualités', 'die Nachrichten'],
+      ['le journal', 'die Zeitung|die Nachrichtensendung'],
+      ['télécharger', 'herunterladen'],
+      ['le réseau social', 'das soziale Netzwerk'],
+      ["l'écran", 'der Bildschirm'],
+      ['le mot de passe', 'das Passwort'],
+      ['partager', 'teilen'],
+      ['une émission', 'eine Sendung'],
+    ],
+    sentences: [
+      ['Je regarde les actualités tous les soirs.', 'Ich schaue jeden Abend die Nachrichten.'],
+      ["J'ai oublié mon mot de passe.", 'Ich habe mein Passwort vergessen.'],
+      ["Elle passe trop de temps devant l'écran.", 'Sie verbringt zu viel Zeit vor dem Bildschirm.'],
+      ['Il a partagé la vidéo sur les réseaux sociaux.', 'Er hat das Video in den sozialen Netzwerken geteilt.'],
+      ['Tu peux télécharger le document ici.', 'Du kannst das Dokument hier herunterladen.'],
+      ["Cette émission parle de cuisine.", 'Diese Sendung handelt vom Kochen.|In dieser Sendung geht es ums Kochen.'],
+    ],
+    cloze: [
+      { fr: 'Il a partagé la vidéo ___ les réseaux sociaux.', answer: 'sur', wrong: ['dans', 'en'], de: 'Er hat das Video in den sozialen Netzwerken geteilt.' },
+      { fr: 'Elle passe trop de temps ___ l’écran.', answer: 'devant', wrong: ['avant', 'sur'], de: 'Sie verbringt zu viel Zeit vor dem Bildschirm.' },
+      { fr: "J'ai oublié mon mot de ___.", answer: 'passe', wrong: ['clé', 'code'], de: 'Ich habe mein Passwort vergessen.' },
+      { fr: 'Je regarde les actualités ___ les soirs.', answer: 'tous', wrong: ['toutes', 'chaque'], de: 'Ich schaue jeden Abend die Nachrichten.' },
+    ],
+  },
+  {
+    id: 'b1-environment',
+    level: 'B1',
+    title: 'Umwelt',
+    tips:
+      'Für Vorschläge und Ratschläge: „On devrait …“, „Il vaudrait mieux …“, „Il est important de …“ + Infinitiv. ' +
+      '„Moins de“ / „plus de“ + Nomen: „moins de plastique“, „plus de vélos“.',
+    vocab: [
+      ["l'environnement", 'die Umwelt'],
+      ['les déchets', 'der Müll|die Abfälle'],
+      ['recycler', 'recyceln|wiederverwerten'],
+      ['la pollution', 'die Verschmutzung'],
+      ['le réchauffement climatique', 'die Erderwärmung|der Klimawandel'],
+      ['économiser', 'sparen'],
+      ["l'énergie", 'die Energie'],
+      ['protéger', 'schützen'],
+    ],
+    sentences: [
+      ["Il faut protéger l'environnement.", 'Man muss die Umwelt schützen.|Wir müssen die Umwelt schützen.'],
+      ['Nous recyclons le verre et le papier.', 'Wir recyceln Glas und Papier.'],
+      ['On devrait utiliser moins de plastique.', 'Man sollte weniger Plastik verwenden.'],
+      ["La pollution de l'air est un grand problème.", 'Die Luftverschmutzung ist ein großes Problem.'],
+      ["Éteins la lumière pour économiser de l'énergie.", 'Mach das Licht aus, um Energie zu sparen.'],
+      ['Le réchauffement climatique inquiète les jeunes.', 'Die Erderwärmung beunruhigt die Jugendlichen.|Der Klimawandel macht den jungen Leuten Sorgen.'],
+    ],
+    cloze: [
+      { fr: 'On devrait utiliser ___ plastique.', answer: 'moins de', wrong: ['moins du', 'moins le'], de: 'Man sollte weniger Plastik verwenden.' },
+      { fr: 'Il ___ protéger l’environnement.', answer: 'faut', wrong: ['doit', 'fait'], de: 'Man muss die Umwelt schützen.' },
+      { fr: 'Éteins la lumière ___ économiser de l’énergie.', answer: 'pour', wrong: ['afin', 'de'], de: 'Mach das Licht aus, um Energie zu sparen.' },
+      { fr: 'Il vaudrait ___ prendre le train.', answer: 'mieux', wrong: ['meilleur', 'bien'], de: 'Es wäre besser, den Zug zu nehmen.' },
+    ],
+  },
 ];

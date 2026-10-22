@@ -1,6 +1,6 @@
 import type { PlacementQuestion } from './types';
 
-/** Six questions per level; the test climbs a level as long as 5 of 6 are right. */
+/** A pool per level; each run draws six and climbs a level as long as 5 of 6 are right. */
 export const PLACEMENT: PlacementQuestion[] = [
   // A1
   { level: 'A1', prompt: 'Was bedeutet …', fr: 'merci', answer: 'danke', wrong: ['bitte', 'hallo', 'nein'] },
@@ -9,6 +9,10 @@ export const PLACEMENT: PlacementQuestion[] = [
   { level: 'A1', prompt: 'Was bedeutet …', fr: 'la sœur', answer: 'die Schwester', wrong: ['die Mutter', 'die Tochter', 'die Freundin'] },
   { level: 'A1', prompt: 'Ergänze:', fr: 'Je ne bois pas ___ café.', answer: 'de', wrong: ['du', 'le', 'des'] },
   { level: 'A1', prompt: 'Wie sagt man „Ich heiße Anna“?', answer: "Je m'appelle Anna.", wrong: ['Je suis appelle Anna.', "J'ai Anna.", "Je m'appelles Anna."] },
+  { level: 'A1', prompt: 'Was bedeutet …', fr: 'Il fait froid.', answer: 'Es ist kalt.', wrong: ['Es ist warm.', 'Er hat Hunger.', 'Er macht Feuer.'] },
+  { level: 'A1', prompt: 'Ergänze:', fr: "Il ___ a deux chambres.", answer: 'y', wrong: ['en', 'le', 'est'] },
+  { level: 'A1', prompt: 'Was bedeutet …', fr: 'jeudi', answer: 'Donnerstag', wrong: ['Dienstag', 'Mittwoch', 'Freitag'] },
+  { level: 'A1', prompt: 'Ergänze:', fr: '___ habites-tu? À Berlin.', answer: 'Où', wrong: ['Quand', 'Qui', 'Comment'] },
   // A2
   { level: 'A2', prompt: 'Ergänze:', fr: 'Hier, nous ___ allés au cinéma.', answer: 'sommes', wrong: ['avons', 'étions', 'allons'] },
   { level: 'A2', prompt: 'Ergänze:', fr: 'Je vais ___ gare.', answer: 'à la', wrong: ['au', 'aux', 'en'] },
@@ -16,6 +20,10 @@ export const PLACEMENT: PlacementQuestion[] = [
   { level: 'A2', prompt: 'Ergänze:', fr: 'Ce gâteau est ___ que l’autre.', answer: 'meilleur', wrong: ['plus bon', 'mieux', 'bonne'] },
   { level: 'A2', prompt: 'Was bedeutet …', fr: 'Il va pleuvoir.', answer: 'Es wird regnen.', wrong: ['Es hat geregnet.', 'Es regnet nicht.', 'Er geht im Regen.'] },
   { level: 'A2', prompt: 'Ergänze:', fr: "Tu as ___ ce film?", answer: 'vu', wrong: ['voir', 'vois', 'vue'] },
+  { level: 'A2', prompt: 'Ergänze:', fr: "J'ai mal ___ tête.", answer: 'à la', wrong: ['au', 'de la', 'à'] },
+  { level: 'A2', prompt: 'Ergänze:', fr: 'Ma mère? Je ___ téléphone ce soir.', answer: 'lui', wrong: ['la', 'leur', 'le'] },
+  { level: 'A2', prompt: 'Ergänze:', fr: 'Je vais au travail ___ vélo.', answer: 'à', wrong: ['en', 'par', 'avec'] },
+  { level: 'A2', prompt: 'Was bedeutet …', fr: "L'addition, s'il vous plaît.", answer: 'Die Rechnung, bitte.', wrong: ['Die Speisekarte, bitte.', 'Noch etwas, bitte.', 'Die Vorspeise, bitte.'] },
   // B1
   { level: 'B1', prompt: 'Ergänze:', fr: 'Quand j’étais petit, je ___ au foot.', answer: 'jouais', wrong: ['ai joué', 'jouerai', 'joue'] },
   { level: 'B1', prompt: 'Ergänze:', fr: "C'est la ville ___ je suis né.", answer: 'où', wrong: ['que', 'dont', 'qui'] },
@@ -23,6 +31,10 @@ export const PLACEMENT: PlacementQuestion[] = [
   { level: 'B1', prompt: 'Ergänze:', fr: 'Tu vas à Paris? Oui, j’___ vais demain.', answer: 'y', wrong: ['en', 'le', 'lui'] },
   { level: 'B1', prompt: 'Ergänze:', fr: 'Quand tu ___ grand, tu comprendras.', answer: 'seras', wrong: ['es', 'serais', 'étais'] },
   { level: 'B1', prompt: 'Ergänze:', fr: 'Voici le livre ___ je t’ai parlé.', answer: 'dont', wrong: ['que', 'qui', 'où'] },
+  { level: 'B1', prompt: 'Ergänze:', fr: 'Je travaille ici ___ trois ans.', answer: 'depuis', wrong: ['pendant', 'pour', 'dès'] },
+  { level: 'B1', prompt: 'Ergänze:', fr: 'Elle a peur ___ chiens.', answer: 'des', wrong: ['de les', 'aux', 'les'] },
+  { level: 'B1', prompt: 'Ergänze:', fr: 'Il vaudrait ___ prendre le train.', answer: 'mieux', wrong: ['meilleur', 'bien', 'plus'] },
+  { level: 'B1', prompt: 'Was bedeutet …', fr: 'démissionner', answer: 'kündigen', wrong: ['einstellen', 'sich bewerben', 'befördern'] },
   // B2
   { level: 'B2', prompt: 'Ergänze:', fr: 'Il faut que tu ___ attention.', answer: 'fasses', wrong: ['fais', 'feras', 'faisais'] },
   { level: 'B2', prompt: 'Ergänze:', fr: 'Bien qu’elle ___ malade, elle travaille.', answer: 'soit', wrong: ['est', 'était', 'sera'] },
@@ -30,6 +42,10 @@ export const PLACEMENT: PlacementQuestion[] = [
   { level: 'B2', prompt: 'Ergänze:', fr: 'Ces clés, je te ___ rends demain.', answer: 'les', wrong: ['leur', 'en', 'lui'] },
   { level: 'B2', prompt: 'Ergänze:', fr: 'Le match est annulé ___ la pluie.', answer: 'à cause de', wrong: ['grâce à', 'puisque', 'pourtant'] },
   { level: 'B2', prompt: 'Ergänze:', fr: 'Ce château a ___ construit au XVe siècle.', answer: 'été', wrong: ['est', 'était', 'eu'] },
+  { level: 'B2', prompt: 'Ergänze:', fr: "Si j'avais su, je ___ venu.", answer: 'serais', wrong: ['aurais', 'suis', 'serai'] },
+  { level: 'B2', prompt: 'Ergänze:', fr: "J'ai ___ essayer, je n'y arrive pas.", answer: 'beau', wrong: ['bien', 'bon', 'beaucoup'] },
+  { level: 'B2', prompt: 'Ergänze:', fr: 'Le chômage a baissé ___ deux pour cent.', answer: 'de', wrong: ['à', 'par', 'en'] },
+  { level: 'B2', prompt: 'Was bedeutet …', fr: 'Les chercheurs auraient trouvé un remède.', answer: 'Die Forscher sollen ein Heilmittel gefunden haben.', wrong: ['Die Forscher hätten ein Heilmittel finden sollen.', 'Die Forscher werden ein Heilmittel finden.', 'Die Forscher fanden kein Heilmittel.'] },
   // C1
   { level: 'C1', prompt: 'Was bedeutet …', fr: 'poser un lapin à quelqu’un', answer: 'jemanden versetzen', wrong: ['jemandem ein Geschenk machen', 'jemanden necken', 'jemanden hereinlegen'] },
   { level: 'C1', prompt: 'Ergänze:', fr: 'Je suis heureux que vous ___ venus.', answer: 'soyez', wrong: ['êtes', 'serez', 'seriez'] },
@@ -37,6 +53,10 @@ export const PLACEMENT: PlacementQuestion[] = [
   { level: 'C1', prompt: 'Welche Form ist passé simple von „venir“ (ils)?', answer: 'ils vinrent', wrong: ['ils venirent', 'ils vinent', 'ils venaient'] },
   { level: 'C1', prompt: 'Ergänze:', fr: "Après qu'il ___ sorti, on a fermé.", answer: 'est', wrong: ['soit', 'serait', 'fût'] },
   { level: 'C1', prompt: 'Was bedeutet …', fr: 'la hausse des prix', answer: 'der Preisanstieg', wrong: ['die Preissenkung', 'der Höchstpreis', 'der Preisvergleich'] },
+  { level: 'C1', prompt: 'Ergänze:', fr: 'Veuillez trouver ___ mon dossier.', answer: 'ci-joint', wrong: ['ci-dessous', 'ici joint', 'en joint'] },
+  { level: 'C1', prompt: 'Ergänze:', fr: "L'idée est bonne; ___, elle coûte cher.", answer: 'toutefois', wrong: ['en outre', 'ainsi', 'dès lors'] },
+  { level: 'C1', prompt: 'Was bedeutet …', fr: 'Ce film est un navet.', answer: 'Dieser Film ist schlecht.', wrong: ['Dieser Film ist ein Klassiker.', 'Dieser Film handelt von Gemüse.', 'Dieser Film ist sehr lang.'] },
+  { level: 'C1', prompt: 'Was bedeutet …', fr: 'avoir le cafard', answer: 'niedergeschlagen sein', wrong: ['Ungeziefer haben', 'gut gelaunt sein', 'Hunger haben'] },
   // C2
   { level: 'C2', prompt: 'Was bedeutet …', fr: 'chelou', answer: 'seltsam', wrong: ['lässig', 'teuer', 'müde'] },
   { level: 'C2', prompt: 'Ergänze:', fr: 'Tu es ___ être là à huit heures.', answer: 'censé', wrong: ['sensé', 'sensible', 'sensibilisé'] },
@@ -44,4 +64,8 @@ export const PLACEMENT: PlacementQuestion[] = [
   { level: 'C2', prompt: 'Was bedeutet …', fr: 'la notice', answer: 'die Gebrauchsanweisung', wrong: ['die Notiz', 'die Nachricht', 'die Rechnung'] },
   { level: 'C2', prompt: 'Ergänze:', fr: "Il était épuisé, aussi ___ refusé.", answer: 'a-t-il', wrong: ['il a', 'a-il', 'il a-t'] },
   { level: 'C2', prompt: 'Was bedeutet …', fr: "l'habit ne fait pas le moine", answer: 'Der Schein trügt.', wrong: ['Kleider machen Leute.', 'Mönche tragen keine Kleider.', 'Wer rastet, der rostet.'] },
+  { level: 'C2', prompt: 'Ergänze:', fr: 'La ___ économique reste incertaine.', answer: 'conjoncture', wrong: ['conjecture', 'jointure', 'conjonction'] },
+  { level: 'C2', prompt: 'Ergänze:', fr: 'Joignez, le cas ___, une copie.', answer: 'échéant', wrong: ['échéance', 'échu', 'échéable'] },
+  { level: 'C2', prompt: 'Ergänze:', fr: 'Les voleurs sont entrés par ___.', answer: 'effraction', wrong: ['infraction', 'fraction', 'friction'] },
+  { level: 'C2', prompt: 'Was bedeutet …', fr: 'une livre de cerises', answer: 'ein Pfund Kirschen', wrong: ['ein Buch über Kirschen', 'eine Kiste Kirschen', 'ein Liter Kirschsaft'] },
 ];
