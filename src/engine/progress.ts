@@ -16,6 +16,10 @@ export interface Progress {
   version: 1;
   placement: { done: boolean; passed: Level | null };
   completed: Record<string, { best: number; times: number }>;
+  /** Best share of correct answers per reading text. */
+  readings: Record<string, number>;
+  /** SRS keys answered wrong recently, newest first. */
+  mistakes: string[];
   skipped: string[];
   cards: Record<string, StoredCard>;
   xp: number;
@@ -29,6 +33,8 @@ export function emptyProgress(): Progress {
     version: 1,
     placement: { done: false, passed: null },
     completed: {},
+    readings: {},
+    mistakes: [],
     skipped: [],
     cards: {},
     xp: 0,
@@ -143,6 +149,25 @@ function serialize(card: Card): StoredCard {
     due: card.due.toISOString(),
     last_review: card.last_review ? card.last_review.toISOString() : null,
   };
+}
+
+const MAX_MISTAKES = 50;
+
+/** Wrong answers enter the mistake book, right ones leave it. */
+export function recordMistakes(p: Progress, firstTry: Record<string, boolean>): Progress {
+  const wrong = Object.keys(firstTry).filter((k) => !firstTry[k]);
+  const kept = p.mistakes.filter((k) => !(k in firstTry));
+  return { ...p, mistakes: [...wrong, ...kept].slice(0, MAX_MISTAKES) };
+}
+
+export function completeReading(p: Progress, id: string, score: number): Progress {
+  return { ...p, readings: { ...p.readings, [id]: Math.max(p.readings[id] ?? 0, score) } };
+}
+
+/** Texts of a level open together with the level's first unit. */
+export function isReadingUnlocked(p: Progress, level: Level): boolean {
+  const first = UNITS.find((u) => u.level === level);
+  return !!first && isUnlocked(p, first.id);
 }
 
 export function dueKeys(p: Progress, now: Date): string[] {

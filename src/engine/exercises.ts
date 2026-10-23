@@ -1,4 +1,4 @@
-import { LEVELS, type Level, type Pair, type Unit } from '../content/types';
+import { LEVELS, type Level, type Pair, type Reading, type Unit } from '../content/types';
 import { UNIT_BY_ID } from '../content';
 import { primary, tiles } from './text';
 import { sample, shuffle } from './random';
@@ -121,4 +121,16 @@ export function exerciseForKey(key: string, rand: () => number = Math.random): E
   if (type === 'c' && unit.cloze[i]) return clozeChoice(unit, i, rand);
   if (type === 's' && unit.sentences[i]) return sentenceExercise(unit, i, Math.floor(rand() * 3), rand);
   return null;
+}
+
+/** Comprehension questions of a reading text as choice exercises. */
+export function readingQuiz(reading: Reading, rand: () => number = Math.random): Exercise[] {
+  return reading.questions.map((q) => ({
+    kind: 'choice',
+    title: 'Frage zum Text',
+    prompt: q.q,
+    promptLang: 'de',
+    answer: q.answer,
+    options: shuffle([q.answer, ...q.wrong], rand),
+  }));
 }

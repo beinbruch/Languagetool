@@ -1,12 +1,15 @@
-import { LEVELS, LEVEL_NAMES } from '../content/types';
+import { LEVELS, LEVEL_NAMES, type Level } from '../content/types';
 import { unitsOf } from '../content';
-import { currentStreak, dueKeys, isDone, isUnlocked, nextUnitId, todayXp, type Progress } from '../engine/progress';
+import { READINGS } from '../content/readings';
+import { currentStreak, dueKeys, isDone, isReadingUnlocked, isUnlocked, nextUnitId, todayXp, type Progress } from '../engine/progress';
 
 interface Props {
   progress: Progress;
   now: Date;
   onUnit: (id: string) => void;
   onReview: () => void;
+  onMistakes: () => void;
+  onReading: (id: string) => void;
   onPlacement: () => void;
   onSkipPlacement: () => void;
   onSettings: () => void;
@@ -20,7 +23,7 @@ function scrollTo(el: HTMLElement | null) {
   requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
 }
 
-export function Home({ progress: p, now, onUnit, onReview, onPlacement, onSkipPlacement, onSettings }: Props) {
+export function Home({ progress: p, now, onUnit, onReview, onMistakes, onReading, onPlacement, onSkipPlacement, onSettings }: Props) {
   const due = dueKeys(p, now).length;
   const streak = currentStreak(p, now);
   const xp = todayXp(p, now);
@@ -73,6 +76,20 @@ export function Home({ progress: p, now, onUnit, onReview, onPlacement, onSkipPl
         </section>
       )}
 
+      {p.mistakes.length > 0 && (
+        <section class="card review">
+          <div>
+            <h2>Fehlerheft</h2>
+            <p>
+              {p.mistakes.length} {p.mistakes.length === 1 ? 'Übung' : 'Übungen'} zuletzt falsch beantwortet.
+            </p>
+          </div>
+          <button type="button" class="primary" onClick={onMistakes}>
+            Üben
+          </button>
+        </section>
+      )}
+
       {LEVELS.map((level) => {
         const units = unitsOf(level);
         const doneCount = units.filter((u) => isDone(p, u.id)).length;
@@ -103,6 +120,7 @@ export function Home({ progress: p, now, onUnit, onReview, onPlacement, onSkipPl
                 );
               })}
             </ol>
+            <ReadingList progress={p} level={level} onReading={onReading} />
           </details>
         );
       })}
@@ -116,6 +134,27 @@ export function Home({ progress: p, now, onUnit, onReview, onPlacement, onSkipPl
           </p>
         </section>
       )}
+    </div>
+  );
+}
+
+function ReadingList({ progress: p, level, onReading }: { progress: Progress; level: Level; onReading: (id: string) => void }) {
+  const texts = READINGS.filter((r) => r.level === level);
+  if (!texts.length) return null;
+  const open = isReadingUnlocked(p, level);
+  return (
+    <div class="readings">
+      <h3>Lesen & Hören</h3>
+      {texts.map((r) => {
+        const best = p.readings[r.id];
+        return (
+          <button type="button" key={r.id} class="reading-card" disabled={!open} onClick={() => onReading(r.id)}>
+            <span aria-hidden="true">{open ? (r.lines.some((l) => l.speaker) ? '💬' : '📖') : '🔒'}</span>
+            <span class="reading-title">{r.title}</span>
+            {best !== undefined && <span class="reading-score">{Math.round(best * 100)}%</span>}
+          </button>
+        );
+      })}
     </div>
   );
 }

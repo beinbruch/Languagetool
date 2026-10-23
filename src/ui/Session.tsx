@@ -26,6 +26,22 @@ function grade(ex: Exercise, a: Answer): Verdict {
   return check(a.text, ex.answer);
 }
 
+const ISSUES = 'https://github.com/beinbruch/Languagetool/issues/new';
+
+/** Prefilled GitHub issue so wrong content can be reported in two taps. */
+function reportUrl(ex: Exercise, given: Answer | null): string {
+  const prompt = ex.kind === 'choice' || ex.kind === 'tiles' || ex.kind === 'type' ? ex.prompt : ex.kind === 'listen' ? '(Hörübung)' : '(Paare)';
+  const body = [
+    `Übung: ${ex.kind}${ex.key ? ` (${ex.key})` : ''}`,
+    `Aufgabe: ${prompt}`,
+    ex.kind !== 'match' ? `Erwartet: ${ex.answer}` : '',
+    given && 'text' in given ? `Meine Antwort: ${given.text}` : '',
+    '',
+    'Was ist falsch?',
+  ].filter((l, i) => l || i > 3).join('\n');
+  return `${ISSUES}?labels=inhalt&title=${encodeURIComponent(`Inhaltsfehler: ${prompt.slice(0, 60)}`)}&body=${encodeURIComponent(body)}`;
+}
+
 function answerIsFrench(ex: Exercise): boolean {
   return ex.kind === 'listen' || ((ex.kind === 'tiles' || ex.kind === 'type') && ex.direction === 'de-fr');
 }
@@ -102,6 +118,9 @@ export function Session({ exercises, rate, sounds, onQuit, onFinish }: Props) {
             </strong>
             {verdict !== 'correct' && sol && <div class="solution">Lösung: {sol}</div>}
             {ex.kind === 'choice' && ex.note && <div class="solution">{ex.note}</div>}
+            <a class="report" href={reportUrl(ex, answer)} target="_blank" rel="noopener">
+              Fehler im Inhalt melden
+            </a>
             {ex.kind === 'listen' && verdict === 'correct' && <div class="solution">{sol}</div>}
             {sol && answerIsFrench(ex) && <SpeakButton text={sol} rate={rate} />}
           </div>

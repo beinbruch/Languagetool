@@ -7,6 +7,8 @@ Eine Sprachlern-App als PWA: Französisch für Deutschsprachige von **A1 bis C2*
 - **56 Einheiten** über alle sechs Stufen des europäischen Referenzrahmens (von Begrüßung und Uhrzeit bis Rechtssprache, Argot und Wortspielen), jede mit Grammatik-Tipps und Wortliste
 - **Einstufungstest**: adaptiv, 6 zufällige Fragen pro Stufe aus einem Pool von 10; wer 5 von 6 schafft, steigt eine Stufe auf. Bestandene Stufen werden übersprungen (bleiben aber offen)
 - **Übungstypen**: Paare finden, Übersetzung wählen, Sätze aus Wortkacheln bauen (A1–A2), frei tippen (ab B1), Hörverstehen, Lückentexte
+- **Lesen & Hören**: 12 eigene Texte und Dialoge (2 pro Stufe), satzweise vorlesbar mit zwei Stimmen, Übersetzung per Tipp, Verständnisfragen
+- **Fehlerheft**: zuletzt falsch beantwortete Übungen gezielt wiederholen; „Fehler im Inhalt melden“ öffnet ein vorausgefülltes GitHub-Issue
 - **Verteilte Wiederholung** mit [FSRS](https://github.com/open-spaced-repetition/ts-fsrs): Jede gelernte Vokabel und jeder Satz kommt dann wieder, wenn du ihn sonst vergessen würdest
 - Antwortprüfung tolerant bei Groß-/Kleinschreibung, Satzzeichen und Apostrophen; fehlende Akzente zählen als richtig, werden aber angezeigt
 - Aussprache über die Sprachausgabe des Geräts (offline, kostenlos)

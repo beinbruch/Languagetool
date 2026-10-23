@@ -12,7 +12,10 @@ import {
   isUnlocked,
   migrate,
   nextUnitId,
+  recordMistakes,
   reviewCard,
+  completeReading,
+  isReadingUnlocked,
 } from '../src/engine/progress';
 
 function seeded(seed: number) {
@@ -85,6 +88,31 @@ describe('progress', () => {
     const old = { ...applyPlacement(emptyProgress(), 'A2'), skipped: ['a1-hello'] };
     const loaded = migrate(JSON.parse(JSON.stringify(old)));
     expect(nextUnitId(loaded)).toBe(UNITS.find((u) => u.level === 'B1')!.id);
+  });
+
+  it('keeps wrong answers in the mistake book until they are answered right', () => {
+    let p = recordMistakes(emptyProgress(), { a: false, b: true, c: false });
+    expect(p.mistakes).toEqual(['a', 'c']);
+    p = recordMistakes(p, { a: true, d: false });
+    expect(p.mistakes).toEqual(['d', 'c']);
+  });
+
+  it('keeps the best reading score and opens texts with their level', () => {
+    let p = completeReading(emptyProgress(), 'r1', 1);
+    p = completeReading(p, 'r1', 0.33);
+    expect(p.readings.r1).toBe(1);
+    expect(isReadingUnlocked(emptyProgress(), 'A1')).toBe(true);
+    expect(isReadingUnlocked(emptyProgress(), 'B1')).toBe(false);
+    expect(isReadingUnlocked(applyPlacement(emptyProgress(), 'A2'), 'B1')).toBe(true);
+  });
+
+  it('loads saves from before readings and mistakes existed', () => {
+    const { readings, mistakes, ...old } = emptyProgress();
+    void readings;
+    void mistakes;
+    const loaded = migrate(JSON.parse(JSON.stringify(old)));
+    expect(loaded.readings).toEqual({});
+    expect(loaded.mistakes).toEqual([]);
   });
 
   it('survives a JSON round-trip and fills missing fields', () => {
